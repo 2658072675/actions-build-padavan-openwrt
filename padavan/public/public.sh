@@ -37,18 +37,18 @@ sed -i "/CONFIG_FIRMWARE_INCLUDE_DDNS_SSL/d"  .config           # HTTPS support 
 sed -i "/CONFIG_FIRMWARE_INCLUDE_HTTPS/d"  .config              # HTTPS support
 
 # C大
-sed -i "/CONFIG_FIRMWARE_INCLUDE_MENTOHUST/d" .config    # 删除配置项 MENTOHUST
-sed -i "/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT/d" .config   # 删除配置项 SCUTCLIENT
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_MENTOHUST/d" .config    # 删除配置项 MENTOHUST
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT/d" .config   # 删除配置项 SCUTCLIENT
 sed -i "/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d" .config  # 删除配置项 SS plus+
-sed -i "/CONFIG_FIRMWARE_INCLUDE_SSSERVER/d" .config     # 删除配置项 SS server
-sed -i "/CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER/d" .config # 删除配置项 DNS-FORWARDER
-sed -i "/CONFIG_FIRMWARE_INCLUDE_ADBYBY/d" .config       # 删除配置项 adbyby plus+
-sed -i "/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d" .config      # 删除配置项 TUNSAFE
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_SSSERVER/d" .config     # 删除配置项 SS server
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER/d" .config # 删除配置项 DNS-FORWARDER
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_ADBYBY/d" .config       # 删除配置项 adbyby plus+
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d" .config      # 删除配置项 TUNSAFE
 sed -i "/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d" .config      # 删除配置项 阿里 DDNS
 sed -i "/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d" .config     # 删除配置项 smartDns
-sed -i "/CONFIG_FIRMWARE_INCLUDE_SRELAY/d" .config       # 删除配置项 srelay 代理
-sed -i "/CONFIG_FIRMWARE_INCLUDE_WYY/d" >> .config        # 删除配置项 网易云解锁
-sed -i "/CONFIG_FIRMWARE_INCLUDE_WYYBIN/d" >> .config     # 删除配置项 网易云解锁GO版本执行文件（4M多）注意固件超大小
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_SRELAY/d" .config       # 删除配置项 srelay 代理
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_WYY/d" >> .config        # 删除配置项 网易云解锁
+#sed -i "/CONFIG_FIRMWARE_INCLUDE_WYYBIN/d" >> .config     # 删除配置项 网易云解锁GO版本执行文件（4M多）注意固件超大小
 
 # 3. 添加公共自定义功能，设备单个的到设备 sh文件中添加
 ######################################################################
@@ -65,7 +65,7 @@ echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config       # srelay
 echo "CONFIG_FIRMWARE_INCLUDE_IPT2SOCKS=n" >> .config    # IPT2
 
 # 广告
-echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config       # adbyby plus+
+echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config       # adbyby plus+
 
 # DNS 有关
 echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config # DNS-FORWARDER
@@ -89,12 +89,12 @@ echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR=y" >> .config
 echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR_FAST_CODE=y" >> .config
 
 ### Include HTTPS support for DDNS client. openssl ~1.2MB
-echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=y" >> .config
+echo "CONFIG_FIRMWARE_INCLUDE_DDNS_SSL=n" >> .config
 
 ### Include HTTPS support. openssl ~1.2MB
-echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=y" >> .config
+echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=n" >> .config
 
 #网易云解锁
-echo "CONFIG_FIRMWARE_INCLUDE_WYY=y" >> .config
+echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config
 #网易云解锁GO版本执行文件（4M多）注意固件超大小
 echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config
